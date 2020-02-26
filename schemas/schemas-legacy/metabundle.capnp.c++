@@ -297,7 +297,7 @@ static const ::capnp::_::RawSchema* const d_ee301882f828d643[] = {
 static const uint16_t m_ee301882f828d643[] = {0};
 static const uint16_t i_ee301882f828d643[] = {0};
 KJ_CONSTEXPR(const) ::capnp::_::RawBrandedSchema::Dependency bd_ee301882f828d643[] = {
-  { 16777216,  ::tmi::bundleshop::MapT< ::capnp::AnyPointer,  ::capnp::AnyPointer>::Pair::_capnpPrivate::brand() },
+  { 16777216,  ::MapT< ::capnp::AnyPointer,  ::capnp::AnyPointer>::Pair::_capnpPrivate::brand() },
 };
 const ::capnp::_::RawSchema s_ee301882f828d643 = {
   0xee301882f828d643, b_ee301882f828d643.words, 50, d_ee301882f828d643, m_ee301882f828d643,
@@ -628,7 +628,7 @@ static const ::capnp::_::RawSchema* const d_9dd9c59d2671a01f[] = {
 static const uint16_t m_9dd9c59d2671a01f[] = {5, 1, 6, 0, 3, 7, 4, 8, 2};
 static const uint16_t i_9dd9c59d2671a01f[] = {0, 1, 2, 3, 4, 5, 6, 7, 8};
 KJ_CONSTEXPR(const) ::capnp::_::RawBrandedSchema::Dependency bd_9dd9c59d2671a01f[] = {
-  { 16777222,  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::_capnpPrivate::brand() },
+  { 16777222,  ::MapT< ::capnp::Text,  ::capnp::Text>::_capnpPrivate::brand() },
 };
 const ::capnp::_::RawSchema s_9dd9c59d2671a01f = {
   0x9dd9c59d2671a01f, b_9dd9c59d2671a01f.words, 176, d_9dd9c59d2671a01f, m_9dd9c59d2671a01f,
@@ -1052,7 +1052,7 @@ static const ::capnp::_::RawSchema* const d_ff98a30c2c755b60[] = {
 static const uint16_t m_ff98a30c2c755b60[] = {3, 7, 6, 15, 21, 16, 5, 20, 4, 17, 19, 2, 1, 10, 11, 12, 14, 13, 22, 18, 8, 9, 0};
 static const uint16_t i_ff98a30c2c755b60[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22};
 KJ_CONSTEXPR(const) ::capnp::_::RawBrandedSchema::Dependency bd_ff98a30c2c755b60[] = {
-  { 16777235,  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::_capnpPrivate::brand() },
+  { 16777235,  ::MapT< ::capnp::Text,  ::capnp::Text>::_capnpPrivate::brand() },
 };
 const ::capnp::_::RawSchema s_ff98a30c2c755b60 = {
   0xff98a30c2c755b60, b_ff98a30c2c755b60.words, 402, d_ff98a30c2c755b60, m_ff98a30c2c755b60,
@@ -1178,8 +1178,6 @@ const ::capnp::_::RawSchema s_dc1adfafd4d96c9d = {
 
 // =======================================================================================
 
-namespace tmi {
-namespace bundleshop {
 
 // Time
 constexpr uint16_t Time::_capnpPrivate::dataWordSize;
@@ -1230,6 +1228,4 @@ constexpr ::capnp::_::RawSchema const* Grammar::_capnpPrivate::schema;
 #endif  // !CAPNP_LITE
 
 
-}  // namespace
-}  // namespace
 

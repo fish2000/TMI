@@ -1,5 +1,16 @@
 
+# N.B. This is a *relative import* from somewhere on Cap‘n’P’s
+# include path – apparently “import "/capnp/c++.capnp"” (with
+# the misleadingly absolute-path-looking slash prefix) is how
+# Cap‘n’P says something like e.g. “#include <capnp/c++.capnp>”
+# …I just spent like 45 minutes trying to figure out why it 
+# didn’t work with only `using Cpp = import "c++.capnp"` and
+# this comment will now stand here until the end of time to
+# commemorate this completely irritating waste of my time. Yes.
+using Cpp = import "/capnp/c++.capnp";
+
 @0xf7b1168c865460f0;
+$Cpp.namespace("tmi::bundleshop");
 
 using String = Text;
 using Email = Text;
@@ -34,7 +45,6 @@ struct MapT(K, T) {
         
         key         @0 :K;
         value       @1 :T;
-        # nextHint    @4 :Pair.nullable;
         
         nextHint :union {
             undefined   @2 :Void;
@@ -44,8 +54,8 @@ struct MapT(K, T) {
     
 }
 
-# using StringKeyMapT = MapT(String);
 using StringMap     = MapT(String, String);
+using KeychainT     = StringMap;
 
 struct Source {
     
@@ -57,7 +67,7 @@ struct Source {
     rank            @4  :Int32;
     disabled        @5  :Bool;
     
-    keychain        @6  :StringMap;
+    keychain        @6  :KeychainT;
     
     pathUpdated     @7  :Time;
     updateAvailable @8  :Bool; # née “needs_update”
@@ -89,7 +99,7 @@ struct Bundle {
     installed       @17 :Bool;
     updateAvailable @18 :Bool; # née “has_update”
     
-    keychain        @19 :StringMap;
+    keychain        @19 :KeychainT;
     
     grammars        @20 :List(Grammar);
     dependants      @21 :List(Bundle);

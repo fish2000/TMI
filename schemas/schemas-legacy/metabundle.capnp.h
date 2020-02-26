@@ -27,8 +27,6 @@ CAPNP_DECLARE_SCHEMA(dc1adfafd4d96c9d);
 }  // namespace schemas
 }  // namespace capnp
 
-namespace tmi {
-namespace bundleshop {
 
 struct Time {
   Time() = delete;
@@ -515,7 +513,7 @@ public:
   }
 
   inline bool hasEntries() const;
-  inline typename  ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>::Reader getEntries() const;
+  inline typename  ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>::Reader getEntries() const;
 
 private:
   ::capnp::_::StructReader _reader;
@@ -552,11 +550,11 @@ public:
   }
 
   inline bool hasEntries();
-  inline typename  ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>::Builder getEntries();
-  inline void setEntries(typename  ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>::Reader value);
-  inline typename  ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>::Builder initEntries(unsigned int size);
-  inline void adoptEntries(::capnp::Orphan< ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>>&& value);
-  inline ::capnp::Orphan< ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>> disownEntries();
+  inline typename  ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>::Builder getEntries();
+  inline void setEntries(typename  ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>::Reader value);
+  inline typename  ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>::Builder initEntries(unsigned int size);
+  inline void adoptEntries(::capnp::Orphan< ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>>&& value);
+  inline ::capnp::Orphan< ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>> disownEntries();
 
 private:
   ::capnp::_::StructBuilder _builder;
@@ -835,10 +833,10 @@ public:
   inline bool getDisabled() const;
 
   inline bool hasKeychain() const;
-  inline  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Reader getKeychain() const;
+  inline  ::MapT< ::capnp::Text,  ::capnp::Text>::Reader getKeychain() const;
 
   inline bool hasPathUpdated() const;
-  inline  ::tmi::bundleshop::Time::Reader getPathUpdated() const;
+  inline  ::Time::Reader getPathUpdated() const;
 
   inline bool getUpdateAvailable() const;
 
@@ -905,18 +903,18 @@ public:
   inline void setDisabled(bool value);
 
   inline bool hasKeychain();
-  inline  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Builder getKeychain();
-  inline void setKeychain( ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Reader value);
-  inline  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Builder initKeychain();
-  inline void adoptKeychain(::capnp::Orphan< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>>&& value);
-  inline ::capnp::Orphan< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>> disownKeychain();
+  inline  ::MapT< ::capnp::Text,  ::capnp::Text>::Builder getKeychain();
+  inline void setKeychain( ::MapT< ::capnp::Text,  ::capnp::Text>::Reader value);
+  inline  ::MapT< ::capnp::Text,  ::capnp::Text>::Builder initKeychain();
+  inline void adoptKeychain(::capnp::Orphan< ::MapT< ::capnp::Text,  ::capnp::Text>>&& value);
+  inline ::capnp::Orphan< ::MapT< ::capnp::Text,  ::capnp::Text>> disownKeychain();
 
   inline bool hasPathUpdated();
-  inline  ::tmi::bundleshop::Time::Builder getPathUpdated();
-  inline void setPathUpdated( ::tmi::bundleshop::Time::Reader value);
-  inline  ::tmi::bundleshop::Time::Builder initPathUpdated();
-  inline void adoptPathUpdated(::capnp::Orphan< ::tmi::bundleshop::Time>&& value);
-  inline ::capnp::Orphan< ::tmi::bundleshop::Time> disownPathUpdated();
+  inline  ::Time::Builder getPathUpdated();
+  inline void setPathUpdated( ::Time::Reader value);
+  inline  ::Time::Builder initPathUpdated();
+  inline void adoptPathUpdated(::capnp::Orphan< ::Time>&& value);
+  inline ::capnp::Orphan< ::Time> disownPathUpdated();
 
   inline bool getUpdateAvailable();
   inline void setUpdateAvailable(bool value);
@@ -939,8 +937,8 @@ public:
   inline explicit Pipeline(::capnp::AnyPointer::Pipeline&& typeless)
       : _typeless(kj::mv(typeless)) {}
 
-  inline  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Pipeline getKeychain();
-  inline  ::tmi::bundleshop::Time::Pipeline getPathUpdated();
+  inline  ::MapT< ::capnp::Text,  ::capnp::Text>::Pipeline getKeychain();
+  inline  ::Time::Pipeline getPathUpdated();
 private:
   ::capnp::AnyPointer::Pipeline _typeless;
   friend class ::capnp::PipelineHook;
@@ -967,7 +965,7 @@ public:
 #endif  // !CAPNP_LITE
 
   inline bool hasUuid() const;
-  inline  ::tmi::bundleshop::UUID::Reader getUuid() const;
+  inline  ::UUID::Reader getUuid() const;
 
   inline bool hasOrigin() const;
   inline  ::capnp::Text::Reader getOrigin() const;
@@ -994,13 +992,13 @@ public:
   inline  ::capnp::Text::Reader getUrl() const;
 
   inline bool hasUrlUpdated() const;
-  inline  ::tmi::bundleshop::Time::Reader getUrlUpdated() const;
+  inline  ::Time::Reader getUrlUpdated() const;
 
   inline bool hasPath() const;
   inline  ::capnp::Text::Reader getPath() const;
 
   inline bool hasPathUpdated() const;
-  inline  ::tmi::bundleshop::Time::Reader getPathUpdated() const;
+  inline  ::Time::Reader getPathUpdated() const;
 
   inline  ::int32_t getRank() const;
 
@@ -1017,16 +1015,16 @@ public:
   inline bool getUpdateAvailable() const;
 
   inline bool hasKeychain() const;
-  inline  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Reader getKeychain() const;
+  inline  ::MapT< ::capnp::Text,  ::capnp::Text>::Reader getKeychain() const;
 
   inline bool hasGrammars() const;
-  inline  ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>::Reader getGrammars() const;
+  inline  ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>::Reader getGrammars() const;
 
   inline bool hasDependants() const;
-  inline  ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>::Reader getDependants() const;
+  inline  ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>::Reader getDependants() const;
 
   inline bool hasSource() const;
-  inline  ::tmi::bundleshop::Source::Reader getSource() const;
+  inline  ::Source::Reader getSource() const;
 
 private:
   ::capnp::_::StructReader _reader;
@@ -1057,11 +1055,11 @@ public:
 #endif  // !CAPNP_LITE
 
   inline bool hasUuid();
-  inline  ::tmi::bundleshop::UUID::Builder getUuid();
-  inline void setUuid( ::tmi::bundleshop::UUID::Reader value);
-  inline  ::tmi::bundleshop::UUID::Builder initUuid();
-  inline void adoptUuid(::capnp::Orphan< ::tmi::bundleshop::UUID>&& value);
-  inline ::capnp::Orphan< ::tmi::bundleshop::UUID> disownUuid();
+  inline  ::UUID::Builder getUuid();
+  inline void setUuid( ::UUID::Reader value);
+  inline  ::UUID::Builder initUuid();
+  inline void adoptUuid(::capnp::Orphan< ::UUID>&& value);
+  inline ::capnp::Orphan< ::UUID> disownUuid();
 
   inline bool hasOrigin();
   inline  ::capnp::Text::Builder getOrigin();
@@ -1120,11 +1118,11 @@ public:
   inline ::capnp::Orphan< ::capnp::Text> disownUrl();
 
   inline bool hasUrlUpdated();
-  inline  ::tmi::bundleshop::Time::Builder getUrlUpdated();
-  inline void setUrlUpdated( ::tmi::bundleshop::Time::Reader value);
-  inline  ::tmi::bundleshop::Time::Builder initUrlUpdated();
-  inline void adoptUrlUpdated(::capnp::Orphan< ::tmi::bundleshop::Time>&& value);
-  inline ::capnp::Orphan< ::tmi::bundleshop::Time> disownUrlUpdated();
+  inline  ::Time::Builder getUrlUpdated();
+  inline void setUrlUpdated( ::Time::Reader value);
+  inline  ::Time::Builder initUrlUpdated();
+  inline void adoptUrlUpdated(::capnp::Orphan< ::Time>&& value);
+  inline ::capnp::Orphan< ::Time> disownUrlUpdated();
 
   inline bool hasPath();
   inline  ::capnp::Text::Builder getPath();
@@ -1134,11 +1132,11 @@ public:
   inline ::capnp::Orphan< ::capnp::Text> disownPath();
 
   inline bool hasPathUpdated();
-  inline  ::tmi::bundleshop::Time::Builder getPathUpdated();
-  inline void setPathUpdated( ::tmi::bundleshop::Time::Reader value);
-  inline  ::tmi::bundleshop::Time::Builder initPathUpdated();
-  inline void adoptPathUpdated(::capnp::Orphan< ::tmi::bundleshop::Time>&& value);
-  inline ::capnp::Orphan< ::tmi::bundleshop::Time> disownPathUpdated();
+  inline  ::Time::Builder getPathUpdated();
+  inline void setPathUpdated( ::Time::Reader value);
+  inline  ::Time::Builder initPathUpdated();
+  inline void adoptPathUpdated(::capnp::Orphan< ::Time>&& value);
+  inline ::capnp::Orphan< ::Time> disownPathUpdated();
 
   inline  ::int32_t getRank();
   inline void setRank( ::int32_t value);
@@ -1162,32 +1160,32 @@ public:
   inline void setUpdateAvailable(bool value);
 
   inline bool hasKeychain();
-  inline  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Builder getKeychain();
-  inline void setKeychain( ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Reader value);
-  inline  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Builder initKeychain();
-  inline void adoptKeychain(::capnp::Orphan< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>>&& value);
-  inline ::capnp::Orphan< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>> disownKeychain();
+  inline  ::MapT< ::capnp::Text,  ::capnp::Text>::Builder getKeychain();
+  inline void setKeychain( ::MapT< ::capnp::Text,  ::capnp::Text>::Reader value);
+  inline  ::MapT< ::capnp::Text,  ::capnp::Text>::Builder initKeychain();
+  inline void adoptKeychain(::capnp::Orphan< ::MapT< ::capnp::Text,  ::capnp::Text>>&& value);
+  inline ::capnp::Orphan< ::MapT< ::capnp::Text,  ::capnp::Text>> disownKeychain();
 
   inline bool hasGrammars();
-  inline  ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>::Builder getGrammars();
-  inline void setGrammars( ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>::Reader value);
-  inline  ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>::Builder initGrammars(unsigned int size);
-  inline void adoptGrammars(::capnp::Orphan< ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>>&& value);
-  inline ::capnp::Orphan< ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>> disownGrammars();
+  inline  ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>::Builder getGrammars();
+  inline void setGrammars( ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>::Reader value);
+  inline  ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>::Builder initGrammars(unsigned int size);
+  inline void adoptGrammars(::capnp::Orphan< ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>>&& value);
+  inline ::capnp::Orphan< ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>> disownGrammars();
 
   inline bool hasDependants();
-  inline  ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>::Builder getDependants();
-  inline void setDependants( ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>::Reader value);
-  inline  ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>::Builder initDependants(unsigned int size);
-  inline void adoptDependants(::capnp::Orphan< ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>>&& value);
-  inline ::capnp::Orphan< ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>> disownDependants();
+  inline  ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>::Builder getDependants();
+  inline void setDependants( ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>::Reader value);
+  inline  ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>::Builder initDependants(unsigned int size);
+  inline void adoptDependants(::capnp::Orphan< ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>>&& value);
+  inline ::capnp::Orphan< ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>> disownDependants();
 
   inline bool hasSource();
-  inline  ::tmi::bundleshop::Source::Builder getSource();
-  inline void setSource( ::tmi::bundleshop::Source::Reader value);
-  inline  ::tmi::bundleshop::Source::Builder initSource();
-  inline void adoptSource(::capnp::Orphan< ::tmi::bundleshop::Source>&& value);
-  inline ::capnp::Orphan< ::tmi::bundleshop::Source> disownSource();
+  inline  ::Source::Builder getSource();
+  inline void setSource( ::Source::Reader value);
+  inline  ::Source::Builder initSource();
+  inline void adoptSource(::capnp::Orphan< ::Source>&& value);
+  inline ::capnp::Orphan< ::Source> disownSource();
 
 private:
   ::capnp::_::StructBuilder _builder;
@@ -1207,11 +1205,11 @@ public:
   inline explicit Pipeline(::capnp::AnyPointer::Pipeline&& typeless)
       : _typeless(kj::mv(typeless)) {}
 
-  inline  ::tmi::bundleshop::UUID::Pipeline getUuid();
-  inline  ::tmi::bundleshop::Time::Pipeline getUrlUpdated();
-  inline  ::tmi::bundleshop::Time::Pipeline getPathUpdated();
-  inline  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Pipeline getKeychain();
-  inline  ::tmi::bundleshop::Source::Pipeline getSource();
+  inline  ::UUID::Pipeline getUuid();
+  inline  ::Time::Pipeline getUrlUpdated();
+  inline  ::Time::Pipeline getPathUpdated();
+  inline  ::MapT< ::capnp::Text,  ::capnp::Text>::Pipeline getKeychain();
+  inline  ::Source::Pipeline getSource();
 private:
   ::capnp::AnyPointer::Pipeline _typeless;
   friend class ::capnp::PipelineHook;
@@ -1238,7 +1236,7 @@ public:
 #endif  // !CAPNP_LITE
 
   inline bool hasUuid() const;
-  inline  ::tmi::bundleshop::UUID::Reader getUuid() const;
+  inline  ::UUID::Reader getUuid() const;
 
   inline bool hasScope() const;
   inline  ::capnp::Text::Reader getScope() const;
@@ -1281,11 +1279,11 @@ public:
 #endif  // !CAPNP_LITE
 
   inline bool hasUuid();
-  inline  ::tmi::bundleshop::UUID::Builder getUuid();
-  inline void setUuid( ::tmi::bundleshop::UUID::Reader value);
-  inline  ::tmi::bundleshop::UUID::Builder initUuid();
-  inline void adoptUuid(::capnp::Orphan< ::tmi::bundleshop::UUID>&& value);
-  inline ::capnp::Orphan< ::tmi::bundleshop::UUID> disownUuid();
+  inline  ::UUID::Builder getUuid();
+  inline void setUuid( ::UUID::Reader value);
+  inline  ::UUID::Builder initUuid();
+  inline void adoptUuid(::capnp::Orphan< ::UUID>&& value);
+  inline ::capnp::Orphan< ::UUID> disownUuid();
 
   inline bool hasScope();
   inline  ::capnp::Text::Builder getScope();
@@ -1334,7 +1332,7 @@ public:
   inline explicit Pipeline(::capnp::AnyPointer::Pipeline&& typeless)
       : _typeless(kj::mv(typeless)) {}
 
-  inline  ::tmi::bundleshop::UUID::Pipeline getUuid();
+  inline  ::UUID::Pipeline getUuid();
 private:
   ::capnp::AnyPointer::Pipeline _typeless;
   friend class ::capnp::PipelineHook;
@@ -1345,11 +1343,11 @@ private:
 
 // =======================================================================================
 
-inline  ::tmi::bundleshop::Time::Which Time::Reader::which() const {
+inline  ::Time::Which Time::Reader::which() const {
   return _reader.getDataField<Which>(
       ::capnp::bounded<0>() * ::capnp::ELEMENTS);
 }
-inline  ::tmi::bundleshop::Time::Which Time::Builder::which() {
+inline  ::Time::Which Time::Builder::which() {
   return _builder.getDataField<Which>(
       ::capnp::bounded<0>() * ::capnp::ELEMENTS);
 }
@@ -1460,11 +1458,11 @@ inline ::capnp::Orphan< ::capnp::Text> Time::Builder::disownFormatted() {
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
 
-inline  ::tmi::bundleshop::UUID::Which UUID::Reader::which() const {
+inline  ::UUID::Which UUID::Reader::which() const {
   return _reader.getDataField<Which>(
       ::capnp::bounded<0>() * ::capnp::ELEMENTS);
 }
-inline  ::tmi::bundleshop::UUID::Which UUID::Builder::which() {
+inline  ::UUID::Which UUID::Builder::which() {
   return _builder.getDataField<Which>(
       ::capnp::bounded<0>() * ::capnp::ELEMENTS);
 }
@@ -1671,34 +1669,34 @@ inline bool MapT<K, T>::Builder::hasEntries() {
       ::capnp::bounded<0>() * ::capnp::POINTERS).isNull();
 }
 template <typename K, typename T>
-inline typename  ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>::Reader MapT<K, T>::Reader::getEntries() const {
-  return ::capnp::_::PointerHelpers< ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>>::get(_reader.getPointerField(
+inline typename  ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>::Reader MapT<K, T>::Reader::getEntries() const {
+  return ::capnp::_::PointerHelpers< ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>>::get(_reader.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
 template <typename K, typename T>
-inline typename  ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>::Builder MapT<K, T>::Builder::getEntries() {
-  return ::capnp::_::PointerHelpers< ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>>::get(_builder.getPointerField(
+inline typename  ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>::Builder MapT<K, T>::Builder::getEntries() {
+  return ::capnp::_::PointerHelpers< ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>>::get(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
 template <typename K, typename T>
-inline void MapT<K, T>::Builder::setEntries(typename  ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>::Reader value) {
-  ::capnp::_::PointerHelpers< ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>>::set(_builder.getPointerField(
+inline void MapT<K, T>::Builder::setEntries(typename  ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>::Reader value) {
+  ::capnp::_::PointerHelpers< ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>>::set(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS), value);
 }
 template <typename K, typename T>
-inline typename  ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>::Builder MapT<K, T>::Builder::initEntries(unsigned int size) {
-  return ::capnp::_::PointerHelpers< ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>>::init(_builder.getPointerField(
+inline typename  ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>::Builder MapT<K, T>::Builder::initEntries(unsigned int size) {
+  return ::capnp::_::PointerHelpers< ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>>::init(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS), size);
 }
 template <typename K, typename T>
 inline void MapT<K, T>::Builder::adoptEntries(
-    ::capnp::Orphan< ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>>&& value) {
-  ::capnp::_::PointerHelpers< ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>>::adopt(_builder.getPointerField(
+    ::capnp::Orphan< ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>>&& value) {
+  ::capnp::_::PointerHelpers< ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>>::adopt(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS), kj::mv(value));
 }
 template <typename K, typename T>
-inline ::capnp::Orphan< ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>> MapT<K, T>::Builder::disownEntries() {
-  return ::capnp::_::PointerHelpers< ::capnp::List<typename  ::tmi::bundleshop::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>>::disown(_builder.getPointerField(
+inline ::capnp::Orphan< ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>> MapT<K, T>::Builder::disownEntries() {
+  return ::capnp::_::PointerHelpers< ::capnp::List<typename  ::MapT<K, T>::Pair,  ::capnp::Kind::STRUCT>>::disown(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
 
@@ -1829,12 +1827,12 @@ inline typename MapT<K, T>::Pair::NextHint::Builder MapT<K, T>::Pair::Builder::i
   return typename MapT<K, T>::Pair::NextHint::Builder(_builder);
 }
 template <typename K, typename T>
-inline typename  ::tmi::bundleshop::MapT<K, T>::Pair::NextHint::Which MapT<K, T>::Pair::NextHint::Reader::which() const {
+inline typename  ::MapT<K, T>::Pair::NextHint::Which MapT<K, T>::Pair::NextHint::Reader::which() const {
   return _reader.getDataField<Which>(
       ::capnp::bounded<0>() * ::capnp::ELEMENTS);
 }
 template <typename K, typename T>
-inline typename  ::tmi::bundleshop::MapT<K, T>::Pair::NextHint::Which MapT<K, T>::Pair::NextHint::Builder::which() {
+inline typename  ::MapT<K, T>::Pair::NextHint::Which MapT<K, T>::Pair::NextHint::Builder::which() {
   return _builder.getDataField<Which>(
       ::capnp::bounded<0>() * ::capnp::ELEMENTS);
 }
@@ -1961,7 +1959,7 @@ const ::capnp::_::RawBrandedSchema::Binding MapT<K, T>::Pair::_capnpPrivate::bra
 };
 template <typename K, typename T>
 const ::capnp::_::RawBrandedSchema::Dependency MapT<K, T>::Pair::_capnpPrivate::brandDependencies[] = {
-  { 16777218,  ::tmi::bundleshop::MapT<K, T>::Pair::NextHint::_capnpPrivate::brand() },
+  { 16777218,  ::MapT<K, T>::Pair::NextHint::_capnpPrivate::brand() },
 };
 template <typename K, typename T>
 const ::capnp::_::RawBrandedSchema MapT<K, T>::Pair::_capnpPrivate::specificBrand = {
@@ -1991,7 +1989,7 @@ const ::capnp::_::RawBrandedSchema::Binding MapT<K, T>::_capnpPrivate::brandBind
 };
 template <typename K, typename T>
 const ::capnp::_::RawBrandedSchema::Dependency MapT<K, T>::_capnpPrivate::brandDependencies[] = {
-  { 16777216,  ::tmi::bundleshop::MapT<K, T>::Pair::_capnpPrivate::brand() },
+  { 16777216,  ::MapT<K, T>::Pair::_capnpPrivate::brand() },
 };
 template <typename K, typename T>
 const ::capnp::_::RawBrandedSchema MapT<K, T>::_capnpPrivate::specificBrand = {
@@ -2172,34 +2170,34 @@ inline bool Source::Builder::hasKeychain() {
   return !_builder.getPointerField(
       ::capnp::bounded<4>() * ::capnp::POINTERS).isNull();
 }
-inline  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Reader Source::Reader::getKeychain() const {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>>::get(_reader.getPointerField(
+inline  ::MapT< ::capnp::Text,  ::capnp::Text>::Reader Source::Reader::getKeychain() const {
+  return ::capnp::_::PointerHelpers< ::MapT< ::capnp::Text,  ::capnp::Text>>::get(_reader.getPointerField(
       ::capnp::bounded<4>() * ::capnp::POINTERS));
 }
-inline  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Builder Source::Builder::getKeychain() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>>::get(_builder.getPointerField(
+inline  ::MapT< ::capnp::Text,  ::capnp::Text>::Builder Source::Builder::getKeychain() {
+  return ::capnp::_::PointerHelpers< ::MapT< ::capnp::Text,  ::capnp::Text>>::get(_builder.getPointerField(
       ::capnp::bounded<4>() * ::capnp::POINTERS));
 }
 #if !CAPNP_LITE
-inline  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Pipeline Source::Pipeline::getKeychain() {
-  return  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Pipeline(_typeless.getPointerField(4));
+inline  ::MapT< ::capnp::Text,  ::capnp::Text>::Pipeline Source::Pipeline::getKeychain() {
+  return  ::MapT< ::capnp::Text,  ::capnp::Text>::Pipeline(_typeless.getPointerField(4));
 }
 #endif  // !CAPNP_LITE
-inline void Source::Builder::setKeychain( ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Reader value) {
-  ::capnp::_::PointerHelpers< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>>::set(_builder.getPointerField(
+inline void Source::Builder::setKeychain( ::MapT< ::capnp::Text,  ::capnp::Text>::Reader value) {
+  ::capnp::_::PointerHelpers< ::MapT< ::capnp::Text,  ::capnp::Text>>::set(_builder.getPointerField(
       ::capnp::bounded<4>() * ::capnp::POINTERS), value);
 }
-inline  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Builder Source::Builder::initKeychain() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>>::init(_builder.getPointerField(
+inline  ::MapT< ::capnp::Text,  ::capnp::Text>::Builder Source::Builder::initKeychain() {
+  return ::capnp::_::PointerHelpers< ::MapT< ::capnp::Text,  ::capnp::Text>>::init(_builder.getPointerField(
       ::capnp::bounded<4>() * ::capnp::POINTERS));
 }
 inline void Source::Builder::adoptKeychain(
-    ::capnp::Orphan< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>>&& value) {
-  ::capnp::_::PointerHelpers< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>>::adopt(_builder.getPointerField(
+    ::capnp::Orphan< ::MapT< ::capnp::Text,  ::capnp::Text>>&& value) {
+  ::capnp::_::PointerHelpers< ::MapT< ::capnp::Text,  ::capnp::Text>>::adopt(_builder.getPointerField(
       ::capnp::bounded<4>() * ::capnp::POINTERS), kj::mv(value));
 }
-inline ::capnp::Orphan< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>> Source::Builder::disownKeychain() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>>::disown(_builder.getPointerField(
+inline ::capnp::Orphan< ::MapT< ::capnp::Text,  ::capnp::Text>> Source::Builder::disownKeychain() {
+  return ::capnp::_::PointerHelpers< ::MapT< ::capnp::Text,  ::capnp::Text>>::disown(_builder.getPointerField(
       ::capnp::bounded<4>() * ::capnp::POINTERS));
 }
 
@@ -2211,34 +2209,34 @@ inline bool Source::Builder::hasPathUpdated() {
   return !_builder.getPointerField(
       ::capnp::bounded<5>() * ::capnp::POINTERS).isNull();
 }
-inline  ::tmi::bundleshop::Time::Reader Source::Reader::getPathUpdated() const {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::get(_reader.getPointerField(
+inline  ::Time::Reader Source::Reader::getPathUpdated() const {
+  return ::capnp::_::PointerHelpers< ::Time>::get(_reader.getPointerField(
       ::capnp::bounded<5>() * ::capnp::POINTERS));
 }
-inline  ::tmi::bundleshop::Time::Builder Source::Builder::getPathUpdated() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::get(_builder.getPointerField(
+inline  ::Time::Builder Source::Builder::getPathUpdated() {
+  return ::capnp::_::PointerHelpers< ::Time>::get(_builder.getPointerField(
       ::capnp::bounded<5>() * ::capnp::POINTERS));
 }
 #if !CAPNP_LITE
-inline  ::tmi::bundleshop::Time::Pipeline Source::Pipeline::getPathUpdated() {
-  return  ::tmi::bundleshop::Time::Pipeline(_typeless.getPointerField(5));
+inline  ::Time::Pipeline Source::Pipeline::getPathUpdated() {
+  return  ::Time::Pipeline(_typeless.getPointerField(5));
 }
 #endif  // !CAPNP_LITE
-inline void Source::Builder::setPathUpdated( ::tmi::bundleshop::Time::Reader value) {
-  ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::set(_builder.getPointerField(
+inline void Source::Builder::setPathUpdated( ::Time::Reader value) {
+  ::capnp::_::PointerHelpers< ::Time>::set(_builder.getPointerField(
       ::capnp::bounded<5>() * ::capnp::POINTERS), value);
 }
-inline  ::tmi::bundleshop::Time::Builder Source::Builder::initPathUpdated() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::init(_builder.getPointerField(
+inline  ::Time::Builder Source::Builder::initPathUpdated() {
+  return ::capnp::_::PointerHelpers< ::Time>::init(_builder.getPointerField(
       ::capnp::bounded<5>() * ::capnp::POINTERS));
 }
 inline void Source::Builder::adoptPathUpdated(
-    ::capnp::Orphan< ::tmi::bundleshop::Time>&& value) {
-  ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::adopt(_builder.getPointerField(
+    ::capnp::Orphan< ::Time>&& value) {
+  ::capnp::_::PointerHelpers< ::Time>::adopt(_builder.getPointerField(
       ::capnp::bounded<5>() * ::capnp::POINTERS), kj::mv(value));
 }
-inline ::capnp::Orphan< ::tmi::bundleshop::Time> Source::Builder::disownPathUpdated() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::disown(_builder.getPointerField(
+inline ::capnp::Orphan< ::Time> Source::Builder::disownPathUpdated() {
+  return ::capnp::_::PointerHelpers< ::Time>::disown(_builder.getPointerField(
       ::capnp::bounded<5>() * ::capnp::POINTERS));
 }
 
@@ -2264,34 +2262,34 @@ inline bool Bundle::Builder::hasUuid() {
   return !_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS).isNull();
 }
-inline  ::tmi::bundleshop::UUID::Reader Bundle::Reader::getUuid() const {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::UUID>::get(_reader.getPointerField(
+inline  ::UUID::Reader Bundle::Reader::getUuid() const {
+  return ::capnp::_::PointerHelpers< ::UUID>::get(_reader.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
-inline  ::tmi::bundleshop::UUID::Builder Bundle::Builder::getUuid() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::UUID>::get(_builder.getPointerField(
+inline  ::UUID::Builder Bundle::Builder::getUuid() {
+  return ::capnp::_::PointerHelpers< ::UUID>::get(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
 #if !CAPNP_LITE
-inline  ::tmi::bundleshop::UUID::Pipeline Bundle::Pipeline::getUuid() {
-  return  ::tmi::bundleshop::UUID::Pipeline(_typeless.getPointerField(0));
+inline  ::UUID::Pipeline Bundle::Pipeline::getUuid() {
+  return  ::UUID::Pipeline(_typeless.getPointerField(0));
 }
 #endif  // !CAPNP_LITE
-inline void Bundle::Builder::setUuid( ::tmi::bundleshop::UUID::Reader value) {
-  ::capnp::_::PointerHelpers< ::tmi::bundleshop::UUID>::set(_builder.getPointerField(
+inline void Bundle::Builder::setUuid( ::UUID::Reader value) {
+  ::capnp::_::PointerHelpers< ::UUID>::set(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS), value);
 }
-inline  ::tmi::bundleshop::UUID::Builder Bundle::Builder::initUuid() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::UUID>::init(_builder.getPointerField(
+inline  ::UUID::Builder Bundle::Builder::initUuid() {
+  return ::capnp::_::PointerHelpers< ::UUID>::init(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
 inline void Bundle::Builder::adoptUuid(
-    ::capnp::Orphan< ::tmi::bundleshop::UUID>&& value) {
-  ::capnp::_::PointerHelpers< ::tmi::bundleshop::UUID>::adopt(_builder.getPointerField(
+    ::capnp::Orphan< ::UUID>&& value) {
+  ::capnp::_::PointerHelpers< ::UUID>::adopt(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS), kj::mv(value));
 }
-inline ::capnp::Orphan< ::tmi::bundleshop::UUID> Bundle::Builder::disownUuid() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::UUID>::disown(_builder.getPointerField(
+inline ::capnp::Orphan< ::UUID> Bundle::Builder::disownUuid() {
+  return ::capnp::_::PointerHelpers< ::UUID>::disown(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
 
@@ -2575,34 +2573,34 @@ inline bool Bundle::Builder::hasUrlUpdated() {
   return !_builder.getPointerField(
       ::capnp::bounded<9>() * ::capnp::POINTERS).isNull();
 }
-inline  ::tmi::bundleshop::Time::Reader Bundle::Reader::getUrlUpdated() const {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::get(_reader.getPointerField(
+inline  ::Time::Reader Bundle::Reader::getUrlUpdated() const {
+  return ::capnp::_::PointerHelpers< ::Time>::get(_reader.getPointerField(
       ::capnp::bounded<9>() * ::capnp::POINTERS));
 }
-inline  ::tmi::bundleshop::Time::Builder Bundle::Builder::getUrlUpdated() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::get(_builder.getPointerField(
+inline  ::Time::Builder Bundle::Builder::getUrlUpdated() {
+  return ::capnp::_::PointerHelpers< ::Time>::get(_builder.getPointerField(
       ::capnp::bounded<9>() * ::capnp::POINTERS));
 }
 #if !CAPNP_LITE
-inline  ::tmi::bundleshop::Time::Pipeline Bundle::Pipeline::getUrlUpdated() {
-  return  ::tmi::bundleshop::Time::Pipeline(_typeless.getPointerField(9));
+inline  ::Time::Pipeline Bundle::Pipeline::getUrlUpdated() {
+  return  ::Time::Pipeline(_typeless.getPointerField(9));
 }
 #endif  // !CAPNP_LITE
-inline void Bundle::Builder::setUrlUpdated( ::tmi::bundleshop::Time::Reader value) {
-  ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::set(_builder.getPointerField(
+inline void Bundle::Builder::setUrlUpdated( ::Time::Reader value) {
+  ::capnp::_::PointerHelpers< ::Time>::set(_builder.getPointerField(
       ::capnp::bounded<9>() * ::capnp::POINTERS), value);
 }
-inline  ::tmi::bundleshop::Time::Builder Bundle::Builder::initUrlUpdated() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::init(_builder.getPointerField(
+inline  ::Time::Builder Bundle::Builder::initUrlUpdated() {
+  return ::capnp::_::PointerHelpers< ::Time>::init(_builder.getPointerField(
       ::capnp::bounded<9>() * ::capnp::POINTERS));
 }
 inline void Bundle::Builder::adoptUrlUpdated(
-    ::capnp::Orphan< ::tmi::bundleshop::Time>&& value) {
-  ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::adopt(_builder.getPointerField(
+    ::capnp::Orphan< ::Time>&& value) {
+  ::capnp::_::PointerHelpers< ::Time>::adopt(_builder.getPointerField(
       ::capnp::bounded<9>() * ::capnp::POINTERS), kj::mv(value));
 }
-inline ::capnp::Orphan< ::tmi::bundleshop::Time> Bundle::Builder::disownUrlUpdated() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::disown(_builder.getPointerField(
+inline ::capnp::Orphan< ::Time> Bundle::Builder::disownUrlUpdated() {
+  return ::capnp::_::PointerHelpers< ::Time>::disown(_builder.getPointerField(
       ::capnp::bounded<9>() * ::capnp::POINTERS));
 }
 
@@ -2648,34 +2646,34 @@ inline bool Bundle::Builder::hasPathUpdated() {
   return !_builder.getPointerField(
       ::capnp::bounded<11>() * ::capnp::POINTERS).isNull();
 }
-inline  ::tmi::bundleshop::Time::Reader Bundle::Reader::getPathUpdated() const {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::get(_reader.getPointerField(
+inline  ::Time::Reader Bundle::Reader::getPathUpdated() const {
+  return ::capnp::_::PointerHelpers< ::Time>::get(_reader.getPointerField(
       ::capnp::bounded<11>() * ::capnp::POINTERS));
 }
-inline  ::tmi::bundleshop::Time::Builder Bundle::Builder::getPathUpdated() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::get(_builder.getPointerField(
+inline  ::Time::Builder Bundle::Builder::getPathUpdated() {
+  return ::capnp::_::PointerHelpers< ::Time>::get(_builder.getPointerField(
       ::capnp::bounded<11>() * ::capnp::POINTERS));
 }
 #if !CAPNP_LITE
-inline  ::tmi::bundleshop::Time::Pipeline Bundle::Pipeline::getPathUpdated() {
-  return  ::tmi::bundleshop::Time::Pipeline(_typeless.getPointerField(11));
+inline  ::Time::Pipeline Bundle::Pipeline::getPathUpdated() {
+  return  ::Time::Pipeline(_typeless.getPointerField(11));
 }
 #endif  // !CAPNP_LITE
-inline void Bundle::Builder::setPathUpdated( ::tmi::bundleshop::Time::Reader value) {
-  ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::set(_builder.getPointerField(
+inline void Bundle::Builder::setPathUpdated( ::Time::Reader value) {
+  ::capnp::_::PointerHelpers< ::Time>::set(_builder.getPointerField(
       ::capnp::bounded<11>() * ::capnp::POINTERS), value);
 }
-inline  ::tmi::bundleshop::Time::Builder Bundle::Builder::initPathUpdated() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::init(_builder.getPointerField(
+inline  ::Time::Builder Bundle::Builder::initPathUpdated() {
+  return ::capnp::_::PointerHelpers< ::Time>::init(_builder.getPointerField(
       ::capnp::bounded<11>() * ::capnp::POINTERS));
 }
 inline void Bundle::Builder::adoptPathUpdated(
-    ::capnp::Orphan< ::tmi::bundleshop::Time>&& value) {
-  ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::adopt(_builder.getPointerField(
+    ::capnp::Orphan< ::Time>&& value) {
+  ::capnp::_::PointerHelpers< ::Time>::adopt(_builder.getPointerField(
       ::capnp::bounded<11>() * ::capnp::POINTERS), kj::mv(value));
 }
-inline ::capnp::Orphan< ::tmi::bundleshop::Time> Bundle::Builder::disownPathUpdated() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::Time>::disown(_builder.getPointerField(
+inline ::capnp::Orphan< ::Time> Bundle::Builder::disownPathUpdated() {
+  return ::capnp::_::PointerHelpers< ::Time>::disown(_builder.getPointerField(
       ::capnp::bounded<11>() * ::capnp::POINTERS));
 }
 
@@ -2785,34 +2783,34 @@ inline bool Bundle::Builder::hasKeychain() {
   return !_builder.getPointerField(
       ::capnp::bounded<12>() * ::capnp::POINTERS).isNull();
 }
-inline  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Reader Bundle::Reader::getKeychain() const {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>>::get(_reader.getPointerField(
+inline  ::MapT< ::capnp::Text,  ::capnp::Text>::Reader Bundle::Reader::getKeychain() const {
+  return ::capnp::_::PointerHelpers< ::MapT< ::capnp::Text,  ::capnp::Text>>::get(_reader.getPointerField(
       ::capnp::bounded<12>() * ::capnp::POINTERS));
 }
-inline  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Builder Bundle::Builder::getKeychain() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>>::get(_builder.getPointerField(
+inline  ::MapT< ::capnp::Text,  ::capnp::Text>::Builder Bundle::Builder::getKeychain() {
+  return ::capnp::_::PointerHelpers< ::MapT< ::capnp::Text,  ::capnp::Text>>::get(_builder.getPointerField(
       ::capnp::bounded<12>() * ::capnp::POINTERS));
 }
 #if !CAPNP_LITE
-inline  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Pipeline Bundle::Pipeline::getKeychain() {
-  return  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Pipeline(_typeless.getPointerField(12));
+inline  ::MapT< ::capnp::Text,  ::capnp::Text>::Pipeline Bundle::Pipeline::getKeychain() {
+  return  ::MapT< ::capnp::Text,  ::capnp::Text>::Pipeline(_typeless.getPointerField(12));
 }
 #endif  // !CAPNP_LITE
-inline void Bundle::Builder::setKeychain( ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Reader value) {
-  ::capnp::_::PointerHelpers< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>>::set(_builder.getPointerField(
+inline void Bundle::Builder::setKeychain( ::MapT< ::capnp::Text,  ::capnp::Text>::Reader value) {
+  ::capnp::_::PointerHelpers< ::MapT< ::capnp::Text,  ::capnp::Text>>::set(_builder.getPointerField(
       ::capnp::bounded<12>() * ::capnp::POINTERS), value);
 }
-inline  ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>::Builder Bundle::Builder::initKeychain() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>>::init(_builder.getPointerField(
+inline  ::MapT< ::capnp::Text,  ::capnp::Text>::Builder Bundle::Builder::initKeychain() {
+  return ::capnp::_::PointerHelpers< ::MapT< ::capnp::Text,  ::capnp::Text>>::init(_builder.getPointerField(
       ::capnp::bounded<12>() * ::capnp::POINTERS));
 }
 inline void Bundle::Builder::adoptKeychain(
-    ::capnp::Orphan< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>>&& value) {
-  ::capnp::_::PointerHelpers< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>>::adopt(_builder.getPointerField(
+    ::capnp::Orphan< ::MapT< ::capnp::Text,  ::capnp::Text>>&& value) {
+  ::capnp::_::PointerHelpers< ::MapT< ::capnp::Text,  ::capnp::Text>>::adopt(_builder.getPointerField(
       ::capnp::bounded<12>() * ::capnp::POINTERS), kj::mv(value));
 }
-inline ::capnp::Orphan< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>> Bundle::Builder::disownKeychain() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::MapT< ::capnp::Text,  ::capnp::Text>>::disown(_builder.getPointerField(
+inline ::capnp::Orphan< ::MapT< ::capnp::Text,  ::capnp::Text>> Bundle::Builder::disownKeychain() {
+  return ::capnp::_::PointerHelpers< ::MapT< ::capnp::Text,  ::capnp::Text>>::disown(_builder.getPointerField(
       ::capnp::bounded<12>() * ::capnp::POINTERS));
 }
 
@@ -2824,29 +2822,29 @@ inline bool Bundle::Builder::hasGrammars() {
   return !_builder.getPointerField(
       ::capnp::bounded<13>() * ::capnp::POINTERS).isNull();
 }
-inline  ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>::Reader Bundle::Reader::getGrammars() const {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>>::get(_reader.getPointerField(
+inline  ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>::Reader Bundle::Reader::getGrammars() const {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>>::get(_reader.getPointerField(
       ::capnp::bounded<13>() * ::capnp::POINTERS));
 }
-inline  ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>::Builder Bundle::Builder::getGrammars() {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>>::get(_builder.getPointerField(
+inline  ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>::Builder Bundle::Builder::getGrammars() {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>>::get(_builder.getPointerField(
       ::capnp::bounded<13>() * ::capnp::POINTERS));
 }
-inline void Bundle::Builder::setGrammars( ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>::Reader value) {
-  ::capnp::_::PointerHelpers< ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>>::set(_builder.getPointerField(
+inline void Bundle::Builder::setGrammars( ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>::Reader value) {
+  ::capnp::_::PointerHelpers< ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>>::set(_builder.getPointerField(
       ::capnp::bounded<13>() * ::capnp::POINTERS), value);
 }
-inline  ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>::Builder Bundle::Builder::initGrammars(unsigned int size) {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>>::init(_builder.getPointerField(
+inline  ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>::Builder Bundle::Builder::initGrammars(unsigned int size) {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>>::init(_builder.getPointerField(
       ::capnp::bounded<13>() * ::capnp::POINTERS), size);
 }
 inline void Bundle::Builder::adoptGrammars(
-    ::capnp::Orphan< ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>>&& value) {
-  ::capnp::_::PointerHelpers< ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>>::adopt(_builder.getPointerField(
+    ::capnp::Orphan< ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>>&& value) {
+  ::capnp::_::PointerHelpers< ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>>::adopt(_builder.getPointerField(
       ::capnp::bounded<13>() * ::capnp::POINTERS), kj::mv(value));
 }
-inline ::capnp::Orphan< ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>> Bundle::Builder::disownGrammars() {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::tmi::bundleshop::Grammar,  ::capnp::Kind::STRUCT>>::disown(_builder.getPointerField(
+inline ::capnp::Orphan< ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>> Bundle::Builder::disownGrammars() {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::Grammar,  ::capnp::Kind::STRUCT>>::disown(_builder.getPointerField(
       ::capnp::bounded<13>() * ::capnp::POINTERS));
 }
 
@@ -2858,29 +2856,29 @@ inline bool Bundle::Builder::hasDependants() {
   return !_builder.getPointerField(
       ::capnp::bounded<14>() * ::capnp::POINTERS).isNull();
 }
-inline  ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>::Reader Bundle::Reader::getDependants() const {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>>::get(_reader.getPointerField(
+inline  ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>::Reader Bundle::Reader::getDependants() const {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>>::get(_reader.getPointerField(
       ::capnp::bounded<14>() * ::capnp::POINTERS));
 }
-inline  ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>::Builder Bundle::Builder::getDependants() {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>>::get(_builder.getPointerField(
+inline  ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>::Builder Bundle::Builder::getDependants() {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>>::get(_builder.getPointerField(
       ::capnp::bounded<14>() * ::capnp::POINTERS));
 }
-inline void Bundle::Builder::setDependants( ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>::Reader value) {
-  ::capnp::_::PointerHelpers< ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>>::set(_builder.getPointerField(
+inline void Bundle::Builder::setDependants( ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>::Reader value) {
+  ::capnp::_::PointerHelpers< ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>>::set(_builder.getPointerField(
       ::capnp::bounded<14>() * ::capnp::POINTERS), value);
 }
-inline  ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>::Builder Bundle::Builder::initDependants(unsigned int size) {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>>::init(_builder.getPointerField(
+inline  ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>::Builder Bundle::Builder::initDependants(unsigned int size) {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>>::init(_builder.getPointerField(
       ::capnp::bounded<14>() * ::capnp::POINTERS), size);
 }
 inline void Bundle::Builder::adoptDependants(
-    ::capnp::Orphan< ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>>&& value) {
-  ::capnp::_::PointerHelpers< ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>>::adopt(_builder.getPointerField(
+    ::capnp::Orphan< ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>>&& value) {
+  ::capnp::_::PointerHelpers< ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>>::adopt(_builder.getPointerField(
       ::capnp::bounded<14>() * ::capnp::POINTERS), kj::mv(value));
 }
-inline ::capnp::Orphan< ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>> Bundle::Builder::disownDependants() {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::tmi::bundleshop::Bundle,  ::capnp::Kind::STRUCT>>::disown(_builder.getPointerField(
+inline ::capnp::Orphan< ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>> Bundle::Builder::disownDependants() {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::Bundle,  ::capnp::Kind::STRUCT>>::disown(_builder.getPointerField(
       ::capnp::bounded<14>() * ::capnp::POINTERS));
 }
 
@@ -2892,34 +2890,34 @@ inline bool Bundle::Builder::hasSource() {
   return !_builder.getPointerField(
       ::capnp::bounded<15>() * ::capnp::POINTERS).isNull();
 }
-inline  ::tmi::bundleshop::Source::Reader Bundle::Reader::getSource() const {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::Source>::get(_reader.getPointerField(
+inline  ::Source::Reader Bundle::Reader::getSource() const {
+  return ::capnp::_::PointerHelpers< ::Source>::get(_reader.getPointerField(
       ::capnp::bounded<15>() * ::capnp::POINTERS));
 }
-inline  ::tmi::bundleshop::Source::Builder Bundle::Builder::getSource() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::Source>::get(_builder.getPointerField(
+inline  ::Source::Builder Bundle::Builder::getSource() {
+  return ::capnp::_::PointerHelpers< ::Source>::get(_builder.getPointerField(
       ::capnp::bounded<15>() * ::capnp::POINTERS));
 }
 #if !CAPNP_LITE
-inline  ::tmi::bundleshop::Source::Pipeline Bundle::Pipeline::getSource() {
-  return  ::tmi::bundleshop::Source::Pipeline(_typeless.getPointerField(15));
+inline  ::Source::Pipeline Bundle::Pipeline::getSource() {
+  return  ::Source::Pipeline(_typeless.getPointerField(15));
 }
 #endif  // !CAPNP_LITE
-inline void Bundle::Builder::setSource( ::tmi::bundleshop::Source::Reader value) {
-  ::capnp::_::PointerHelpers< ::tmi::bundleshop::Source>::set(_builder.getPointerField(
+inline void Bundle::Builder::setSource( ::Source::Reader value) {
+  ::capnp::_::PointerHelpers< ::Source>::set(_builder.getPointerField(
       ::capnp::bounded<15>() * ::capnp::POINTERS), value);
 }
-inline  ::tmi::bundleshop::Source::Builder Bundle::Builder::initSource() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::Source>::init(_builder.getPointerField(
+inline  ::Source::Builder Bundle::Builder::initSource() {
+  return ::capnp::_::PointerHelpers< ::Source>::init(_builder.getPointerField(
       ::capnp::bounded<15>() * ::capnp::POINTERS));
 }
 inline void Bundle::Builder::adoptSource(
-    ::capnp::Orphan< ::tmi::bundleshop::Source>&& value) {
-  ::capnp::_::PointerHelpers< ::tmi::bundleshop::Source>::adopt(_builder.getPointerField(
+    ::capnp::Orphan< ::Source>&& value) {
+  ::capnp::_::PointerHelpers< ::Source>::adopt(_builder.getPointerField(
       ::capnp::bounded<15>() * ::capnp::POINTERS), kj::mv(value));
 }
-inline ::capnp::Orphan< ::tmi::bundleshop::Source> Bundle::Builder::disownSource() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::Source>::disown(_builder.getPointerField(
+inline ::capnp::Orphan< ::Source> Bundle::Builder::disownSource() {
+  return ::capnp::_::PointerHelpers< ::Source>::disown(_builder.getPointerField(
       ::capnp::bounded<15>() * ::capnp::POINTERS));
 }
 
@@ -2931,34 +2929,34 @@ inline bool Grammar::Builder::hasUuid() {
   return !_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS).isNull();
 }
-inline  ::tmi::bundleshop::UUID::Reader Grammar::Reader::getUuid() const {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::UUID>::get(_reader.getPointerField(
+inline  ::UUID::Reader Grammar::Reader::getUuid() const {
+  return ::capnp::_::PointerHelpers< ::UUID>::get(_reader.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
-inline  ::tmi::bundleshop::UUID::Builder Grammar::Builder::getUuid() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::UUID>::get(_builder.getPointerField(
+inline  ::UUID::Builder Grammar::Builder::getUuid() {
+  return ::capnp::_::PointerHelpers< ::UUID>::get(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
 #if !CAPNP_LITE
-inline  ::tmi::bundleshop::UUID::Pipeline Grammar::Pipeline::getUuid() {
-  return  ::tmi::bundleshop::UUID::Pipeline(_typeless.getPointerField(0));
+inline  ::UUID::Pipeline Grammar::Pipeline::getUuid() {
+  return  ::UUID::Pipeline(_typeless.getPointerField(0));
 }
 #endif  // !CAPNP_LITE
-inline void Grammar::Builder::setUuid( ::tmi::bundleshop::UUID::Reader value) {
-  ::capnp::_::PointerHelpers< ::tmi::bundleshop::UUID>::set(_builder.getPointerField(
+inline void Grammar::Builder::setUuid( ::UUID::Reader value) {
+  ::capnp::_::PointerHelpers< ::UUID>::set(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS), value);
 }
-inline  ::tmi::bundleshop::UUID::Builder Grammar::Builder::initUuid() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::UUID>::init(_builder.getPointerField(
+inline  ::UUID::Builder Grammar::Builder::initUuid() {
+  return ::capnp::_::PointerHelpers< ::UUID>::init(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
 inline void Grammar::Builder::adoptUuid(
-    ::capnp::Orphan< ::tmi::bundleshop::UUID>&& value) {
-  ::capnp::_::PointerHelpers< ::tmi::bundleshop::UUID>::adopt(_builder.getPointerField(
+    ::capnp::Orphan< ::UUID>&& value) {
+  ::capnp::_::PointerHelpers< ::UUID>::adopt(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS), kj::mv(value));
 }
-inline ::capnp::Orphan< ::tmi::bundleshop::UUID> Grammar::Builder::disownUuid() {
-  return ::capnp::_::PointerHelpers< ::tmi::bundleshop::UUID>::disown(_builder.getPointerField(
+inline ::capnp::Orphan< ::UUID> Grammar::Builder::disownUuid() {
+  return ::capnp::_::PointerHelpers< ::UUID>::disown(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
 
@@ -3102,6 +3100,4 @@ inline ::capnp::Orphan< ::capnp::Text> Grammar::Builder::disownModeLine() {
       ::capnp::bounded<4>() * ::capnp::POINTERS));
 }
 
-}  // namespace
-}  // namespace
 
