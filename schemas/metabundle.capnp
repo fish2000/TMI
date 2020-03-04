@@ -12,83 +12,40 @@ using Cpp = import "/capnp/c++.capnp";
 @0xf7b1168c865460f0;
 $Cpp.namespace("tmi::bundleshop");
 
-using String = Text;
-using Email = Text;
-using Path = Text;
-using URL = Text;
-
-struct Time {
-    union {
-        undefined   @0 :Void;
-        timestamp   @1 :UInt64;
-        formatted   @2 :String;
-    }
-}
-
-struct UUID {
-    union {
-        undefined   @0 :Void;
-        unbounded   @1 :Data;
-        bytearray   @2 :List(UInt8);
-        longwords      :group {
-               hi   @3 :UInt64;
-               lo   @4 :UInt64;
-        }
-    }
-}
-
-struct MapT(K, T) {
-    
-    entries         @0 :List(Pair);
-    
-    struct Pair {
-        
-        key         @0 :K;
-        value       @1 :T;
-        
-        nextHint :union {
-            undefined   @2 :Void;
-            reference   @3 :AnyPointer;
-        }
-    }
-    
-}
-
-using StringMap     = MapT(String, String);
-using KeychainT     = StringMap;
+using Detail = import "detail.capnp";
 
 struct Source {
     
-    name            @0  :String;
-    identifier      @1  :String;
+    name            @0  :Detail.String;
+    identifier      @1  :Detail.String;
     
-    url             @2  :URL;
-    path            @3  :Path;
+    url             @2  :Detail.URL;
+    path            @3  :Detail.Path;
     rank            @4  :Int32;
     disabled        @5  :Bool;
     
-    keychain        @6  :KeychainT;
+    keychain        @6  :Detail.KeychainT;
     
-    pathUpdated     @7  :Time;
+    pathUpdated     @7  :Detail.Time;
     updateAvailable @8  :Bool; # née “needs_update”
 }
 
 struct Bundle {
     
-    uuid            @0  :UUID;
-    origin          @1  :String;
-    name            @2  :String;
-    category        @3  :String;
+    uuid            @0  :Detail.UUID;
+    origin          @1  :Detail.String;
+    name            @2  :Detail.String;
+    category        @3  :Detail.String;
     
-    htmlURL         @4  :URL;
-    description     @5  :String;
-    contactName     @6  :String;
-    contactEmail    @7  :Email;
+    htmlURL         @4  :Detail.URL;
+    description     @5  :Detail.String;
+    contactName     @6  :Detail.String;
+    contactEmail    @7  :Detail.Email;
     
-    url             @8  :URL;
-    urlUpdated      @9  :Time;
-    path            @10 :Path;
-    pathUpdated     @11 :Time;
+    url             @8  :Detail.URL;
+    urlUpdated      @9  :Detail.Time;
+    path            @10 :Detail.Path;
+    pathUpdated     @11 :Detail.Time;
     
     rank            @12 :Int32;
     size            @13 :Int32;
@@ -99,7 +56,7 @@ struct Bundle {
     installed       @17 :Bool;
     updateAvailable @18 :Bool; # née “has_update”
     
-    keychain        @19 :KeychainT;
+    keychain        @19 :Detail.KeychainT;
     
     grammars        @20 :List(Grammar);
     dependants      @21 :List(Bundle);
@@ -108,10 +65,10 @@ struct Bundle {
 
 struct Grammar {
     
-    uuid            @0  :UUID;
-    name            @2  :String;
-    scope           @1  :String;
-    fileTypes       @3  :List(String);
-    modeLine        @4  :String;
+    uuid            @0  :Detail.UUID;
+    name            @2  :Detail.String;
+    scope           @1  :Detail.String;
+    fileTypes       @3  :List(Detail.String);
+    modeLine        @4  :Detail.String;
     
 }
